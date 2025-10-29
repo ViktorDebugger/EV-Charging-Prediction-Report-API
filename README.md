@@ -284,45 +284,6 @@ curl -X GET "http://127.0.0.1:8000/target-drift"
 - Статистичні тести на зміну розподілу target
 - Візуалізація розподілу класів до/після
 
-#### 3.3. Classification Performance Report
-
-**GET** `/classification-performance`
-
-Генерує звіт про продуктивність моделі (потрібен ground truth - `actual_class`).
-
-**Приклад запиту:**
-
-```bash
-curl -X GET "http://127.0.0.1:8000/classification-performance"
-```
-
-**Відповідь (якщо є ground truth):**
-
-```json
-{
-  "status": "success",
-  "message": "Classification Performance Report completed",
-  "report_path": "reports/classification-performance/report_2025-10-28_21-00-15.html",
-  "records_analyzed": 150
-}
-```
-
-**Відповідь (якщо немає ground truth):**
-
-```json
-{
-  "status": "error",
-  "message": "Відсутня колонка 'actual_class'. Для Classification Performance Report потрібні фактичні значення класів."
-}
-```
-
-**Що показує звіт:**
-
-- Accuracy, Precision, Recall, F1-Score
-- Confusion Matrix (матриця помилок)
-- Метрики для кожного класу окремо
-- Найчастіші помилки класифікації
-
 #### 3.4. Data Quality Report
 
 **GET** `/data-quality`
