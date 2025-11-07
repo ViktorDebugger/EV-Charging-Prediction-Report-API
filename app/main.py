@@ -1,3 +1,13 @@
+try:
+    from typing import List
+    _closure = getattr(List.__getitem__, "__closure__", None)
+    if _closure:
+        _cell = _closure[0].cell_contents
+        if not hasattr(_cell, "cache_clear"):
+            setattr(_cell, "cache_clear", lambda: None)
+except Exception:
+    pass
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .endpoints import training, inference, monitor

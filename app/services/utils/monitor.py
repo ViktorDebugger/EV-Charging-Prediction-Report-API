@@ -8,7 +8,6 @@ from app.services.utils.processed_feature import prepare_dataframe
 import pandas as pd
 import numpy as np
 
-
 def get_reference_data() -> pd.DataFrame:
     features = processed_crud.get_all()
     

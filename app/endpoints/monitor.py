@@ -8,7 +8,6 @@ from datetime import datetime
 from evidently.report import Report
 from evidently.metric_preset import DataDriftPreset, TargetDriftPreset, DataQualityPreset
 
-
 router = APIRouter()
 
 @router.get("/data-drift")
